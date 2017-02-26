@@ -1,4 +1,3 @@
-
 const webpackConfig = require('./webpack.config');
 
 webpackConfig.devtool = 'inline-source-map';
