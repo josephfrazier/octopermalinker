@@ -10,7 +10,7 @@ if (process.env.APPVEYOR) {
 module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['detectBrowsers', 'mocha', 'fixture'],
+    frameworks: ['detectBrowsers', 'mocha'],
     detectBrowsers: {
       postDetection(availableBrowsers) {
         return availableBrowsers
@@ -31,14 +31,10 @@ module.exports = function (config) {
     },
     files: [
       'test/main-lib.js',
-      'test/main-packages.js',
-      'packages/*/fixtures/**/*.html',
     ],
     exclude: [],
     preprocessors: {
       'test/main-lib.js': ['webpack', 'sourcemap'],
-      'test/main-packages.js': ['webpack', 'sourcemap'],
-      'packages/*/fixtures/**/*.html': ['html2js'],
     },
     webpack: webpackConfig,
     webpackMiddleware: {
