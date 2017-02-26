@@ -1,5 +1,5 @@
 <!--
-Thanks for reporting an issue with OctoLinker! In order to help get the fastest
+Thanks for reporting an issue with OctoPermalinker! In order to help get the fastest
 resolution to the problem, please fill in the following details:
 -->
 
@@ -7,9 +7,9 @@ resolution to the problem, please fill in the following details:
 
 **Browser version:** 
 
-**OctoLinker version:** 
+**OctoPermalinker version:** 
 
-**URL and line number where issue occurs:** 
+**URL number where issue occurs:** 
 
 **Expected behavior:** 
 
