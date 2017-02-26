@@ -6,7 +6,7 @@
   "description": "",
   "homepage_url": "https://github.com/josephfrazier/TODO",
   "icons": {
-    "128": "icon.png"
+    "614": "link-icon.png"
   },
   "applications": {
     "gecko": {
