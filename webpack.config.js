@@ -3,7 +3,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin'); // eslint-disable-line
 module.exports = {
   entry: {
     app: './lib/app',
-    background: './lib/background/index',
     options: './lib/options/page',
   },
   devtool: 'source-map',

@@ -3719,11 +3719,6 @@
       "resolved": "https://registry.npmjs.org/joi/-/joi-6.10.1.tgz",
       "dev": true
     },
-    "jquery": {
-      "version": "3.1.1",
-      "from": "jquery@>=3.1.1 <4.0.0",
-      "resolved": "http://registry.npmjs.org/jquery/-/jquery-3.1.1.tgz"
-    },
     "js-base64": {
       "version": "2.1.9",
       "from": "js-base64@>=2.1.9 <3.0.0",
