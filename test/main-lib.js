@@ -3,7 +3,7 @@ import test from 'tape';
 import jsdom from 'jsdom';
 import permalink from '../lib/permalinker';
 
-require('dotenv').config();
+require('dotenv-safe').config();
 
 test('permalinker', (t) => {
   t.test('https://github.com/isaacs/github/issues/625#issuecomment-203464167', (t) => {

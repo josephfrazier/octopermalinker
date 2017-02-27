@@ -2454,8 +2454,14 @@
     },
     "dotenv": {
       "version": "4.0.0",
-      "from": "dotenv@latest",
+      "from": "dotenv@>=4.0.0 <5.0.0",
       "resolved": "https://registry.npmjs.org/dotenv/-/dotenv-4.0.0.tgz",
+      "dev": true
+    },
+    "dotenv-safe": {
+      "version": "4.0.3",
+      "from": "dotenv-safe@latest",
+      "resolved": "https://registry.npmjs.org/dotenv-safe/-/dotenv-safe-4.0.3.tgz",
       "dev": true
     },
     "dtrace-provider": {
