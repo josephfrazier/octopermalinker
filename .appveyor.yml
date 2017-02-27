@@ -9,9 +9,6 @@ cache:
 install:
   # Get the latest stable version of Node.js or io.js
   - ps: Install-Product node $env:nodejs_version
-  - appveyor-retry choco install firefox
-  - appveyor-retry choco install googlechrome
-  - appveyor-retry choco install phantomjs
   - appveyor-retry choco install zip
   # install modules
   - npm install -g npm@latest
@@ -25,7 +22,6 @@ test_script:
   # Make sure build works on Windows
   - npm run package-all
   # run tests
-  - set PHANTOMJS_BIN=C:\ProgramData\chocolatey\bin\phantomjs.exe
   - appveyor-retry call npm test
 
 # Don't actually build.
