@@ -19,4 +19,18 @@ test('permalinker', (t) => {
       });
     });
   });
+
+  t.test('https://github.com/thoughtbot/dotfiles/pull/513#discussion_r101161729', (t) => {
+    t.plan(3);
+
+    jsdom.env('https://github.com/thoughtbot/dotfiles/pull/513#discussion_r101161729', (err, { document }) => {
+      t.ifError(err);
+
+      permalink({ token: process.env.GITHUB_TOKEN }, document).then(() => {
+        const fragileLink = document.querySelector('[href="https://github.com/thoughtbot/dotfiles/blob/master/rcrc#L2"]');
+        t.equal(fragileLink.nextSibling.textContent.length, 2); // can't seem to check for ' ('
+        t.equal(fragileLink.nextElementSibling.href, 'https://github.com/thoughtbot/dotfiles/blob/2fa36ccf9dab57597dc3296381474641a5cbd813/rcrc#L2');
+      });
+    });
+  });
 });
