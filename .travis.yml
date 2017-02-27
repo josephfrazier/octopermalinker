@@ -3,11 +3,9 @@ language: node_js
 node_js:
   - 6
 cache:
+  yarn: true
   directories:
     - node_modules
-# Use npm > 4 to fix https://github.com/npm/npm/issues/14042
-before_install:
-  - npm install -g npm@latest
 script:
   - travis_retry npm test
 before_deploy:

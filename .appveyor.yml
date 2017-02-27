@@ -6,6 +6,7 @@ environment:
 
 cache:
   - node_modules
+  - "%LOCALAPPDATA%\\Yarn"
 
 # Install scripts. (runs after repo cloning)
 install:
@@ -13,8 +14,7 @@ install:
   - ps: Install-Product node $env:nodejs_version
   - appveyor-retry choco install zip
   # install modules
-  - npm install -g npm@latest
-  - npm install
+  - yarn
 
 # Post-install test scripts.
 test_script:
