@@ -52,6 +52,7 @@
     "chrome-launch": "1.1.4",
     "chrome-webstore-upload-cli": "1.1.1",
     "copy-webpack-plugin": "4.0.1",
+    "dotenv": "4.0.0",
     "eslint": "3.14.1",
     "eslint-config-airbnb-base": "11.0.1",
     "eslint-plugin-import": "2.2.0",

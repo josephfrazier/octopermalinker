@@ -2452,6 +2452,12 @@
       "resolved": "https://registry.npmjs.org/dot-prop/-/dot-prop-3.0.0.tgz",
       "dev": true
     },
+    "dotenv": {
+      "version": "4.0.0",
+      "from": "dotenv@latest",
+      "resolved": "https://registry.npmjs.org/dotenv/-/dotenv-4.0.0.tgz",
+      "dev": true
+    },
     "dtrace-provider": {
       "version": "0.8.0",
       "from": "dtrace-provider@>=0.8.0 <0.9.0",

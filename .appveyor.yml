@@ -1,6 +1,8 @@
 # Test against this version of Node.js
 environment:
   nodejs_version: "6"
+  GITHUB_TOKEN:
+    secure: Mh3yVwUwbcHCUYF2NkA+Qs84kuijuUswzz6QgXBw7/HvNiSM0EAHVreUeDlqZCh3
 
 cache:
   - node_modules
