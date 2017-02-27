@@ -2435,6 +2435,11 @@
       "resolved": "https://registry.npmjs.org/domhandler/-/domhandler-2.3.0.tgz",
       "dev": true
     },
+    "domify": {
+      "version": "1.4.0",
+      "from": "domify@latest",
+      "resolved": "https://registry.npmjs.org/domify/-/domify-1.4.0.tgz"
+    },
     "domutils": {
       "version": "1.5.1",
       "from": "domutils@1.5.1",
