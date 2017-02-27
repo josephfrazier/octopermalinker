@@ -2116,7 +2116,8 @@
     "core-js": {
       "version": "2.4.1",
       "from": "core-js@>=2.4.0 <3.0.0",
-      "resolved": "https://registry.npmjs.org/core-js/-/core-js-2.4.1.tgz"
+      "resolved": "https://registry.npmjs.org/core-js/-/core-js-2.4.1.tgz",
+      "dev": true
     },
     "core-util-is": {
       "version": "1.0.2",
