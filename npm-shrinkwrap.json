@@ -2181,9 +2181,8 @@
     },
     "concat-map": {
       "version": "0.0.1",
-      "from": "concat-map@0.0.1",
-      "resolved": "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz",
-      "dev": true
+      "from": "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz",
+      "resolved": "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz"
     },
     "concat-stream": {
       "version": "1.6.0",

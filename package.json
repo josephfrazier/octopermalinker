@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "chrome-promise": "2.0.2",
+    "concat-map": "0.0.1",
     "github-api": "3.0.0",
     "github-injection": "0.3.0",
     "github-url-to-object": "2.2.6"
