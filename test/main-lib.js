@@ -15,6 +15,11 @@ test('permalinker', (t) => {
     'https://github.com/thoughtbot/dotfiles/blob/master/rcrc#L2',
     'https://github.com/thoughtbot/dotfiles/blob/2fa36ccf9dab57597dc3296381474641a5cbd813/rcrc#L2',
   );
+
+  checkLink(t, 'https://github.com/OctoLinker/browser-extension/issues/113#issue-163053327',
+    'https://github.com/OctoLinker/browser-extension/blob/71ae1d68526919bee2c6e8339a1cd87b5febff11/lib/click-handler.js#L54-L61',
+    'https://github.com/OctoLinker/browser-extension/blob/71ae1d68526919bee2c6e8339a1cd87b5febff11/lib/click-handler.js#L54-L61',
+  );
 });
 
 function checkLink(t, pageUrl, linkHref, permalinkHref) {
