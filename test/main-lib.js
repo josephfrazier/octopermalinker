@@ -24,7 +24,7 @@ test('permalinker', (t) => {
 
 function checkLink(t, pageUrl, linkHref, permalinkHref) {
   t.test(pageUrl, (t) => {
-    t.plan(3);
+    t.plan(4);
 
     jsdom.env(pageUrl, (err, { document }) => {
       t.ifError(err);
@@ -35,14 +35,17 @@ function checkLink(t, pageUrl, linkHref, permalinkHref) {
           // a permalink should have been inserted
           t.equal(fragileLink.nextSibling.textContent.length, 2); // can't seem to check for ' ('
           t.equal(fragileLink.nextElementSibling.href, permalinkHref);
+          t.equal(fragileLink.nextElementSibling.title, permalinkHref);
         } else if (fragileLink.nextElementSibling) {
           // a permalink should not have been inserted
           t.pass("skipping ' (' check since next link shouldn't be a permalink");
           t.notEqual(fragileLink.nextElementSibling.href, permalinkHref);
+          t.pass("skipping title check since next link shouldn't be a permalink");
         } else {
           // there no next link, so we're good
           t.pass("skipping ' (' check since there isn't a next link");
           t.pass("skipping href check since there isn't a next link");
+          t.pass("skipping title check since there isn't a next link");
         }
       });
     });
