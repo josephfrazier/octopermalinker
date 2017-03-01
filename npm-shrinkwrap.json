@@ -3950,16 +3950,6 @@
       "resolved": "https://registry.npmjs.org/map-stream/-/map-stream-0.1.0.tgz",
       "dev": true
     },
-    "md5-hex": {
-      "version": "2.0.0",
-      "from": "md5-hex@latest",
-      "resolved": "https://registry.npmjs.org/md5-hex/-/md5-hex-2.0.0.tgz"
-    },
-    "md5-o-matic": {
-      "version": "0.1.1",
-      "from": "md5-o-matic@>=0.1.1 <0.2.0",
-      "resolved": "https://registry.npmjs.org/md5-o-matic/-/md5-o-matic-0.1.1.tgz"
-    },
     "memory-fs": {
       "version": "0.4.1",
       "from": "memory-fs@>=0.4.1 <0.5.0",
