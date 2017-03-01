@@ -27,19 +27,19 @@ function checkLink(t, pageUrl, linkHref, permalinkHref) {
     t.plan(4);
 
     jsdom.env(pageUrl, (err, { document }) => {
-      t.ifError(err);
+      t.ifError(err, 'created DOM');
 
       permalink({ token: process.env.GITHUB_TOKEN }, document).then(() => {
         const fragileLink = document.querySelector(`[href="${linkHref}"]`);
         if (permalinkHref !== linkHref) {
           // a permalink should have been inserted
-          t.equal(fragileLink.nextSibling.textContent.length, 2); // can't seem to check for ' ('
-          t.equal(fragileLink.nextElementSibling.href, permalinkHref);
-          t.equal(fragileLink.nextElementSibling.title, permalinkHref);
+          t.equal(fragileLink.nextSibling.textContent.length, 2, 'text separator present'); // can't seem to check for ' ('
+          t.equal(fragileLink.nextElementSibling.href, permalinkHref, 'href is permalink');
+          t.equal(fragileLink.nextElementSibling.title, permalinkHref, 'title is permalink');
         } else if (fragileLink.nextElementSibling) {
           // a permalink should not have been inserted
           t.pass("skipping ' (' check since next link shouldn't be a permalink");
-          t.notEqual(fragileLink.nextElementSibling.href, permalinkHref);
+          t.notEqual(fragileLink.nextElementSibling.href, permalinkHref, 'href is not permalink');
           t.pass("skipping title check since next link shouldn't be a permalink");
         } else {
           // there no next link, so we're good
