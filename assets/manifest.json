@@ -6,7 +6,7 @@
   "description": "",
   "homepage_url": "https://github.com/josephfrazier/octopermalinker",
   "icons": {
-    "614": "link-icon.png"
+    "212": "link-icon.png"
   },
   "applications": {
     "gecko": {
