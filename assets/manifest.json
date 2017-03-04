@@ -30,6 +30,9 @@
       "all_frames": false
     }
   ],
+  "web_accessible_resources": [
+    "link-icon.png"
+  ],
   "permissions": [
     "storage",
     "https://github.com/",
