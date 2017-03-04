@@ -20,6 +20,11 @@ test('permalinker', (t) => {
     'https://github.com/OctoLinker/browser-extension/blob/71ae1d68526919bee2c6e8339a1cd87b5febff11/lib/click-handler.js#L54-L61',
     'https://github.com/OctoLinker/browser-extension/blob/71ae1d68526919bee2c6e8339a1cd87b5febff11/lib/click-handler.js#L54-L61',
   );
+
+  checkLink(t, 'https://gist.github.com/HaNdTriX/77916f3fcdd7d285f7c9#what-i-already-got',
+    'https://github.com/HaNdTriX/generator-chrome-extension-kickstart/blob/master/app/templates/tasks/compress.js',
+    'https://github.com/HaNdTriX/generator-chrome-extension-kickstart/blob/780d02c18433983d8dd13ebc0b2d3ef9b7beaf06/app/templates/tasks/compress.js',
+  );
 });
 
 function checkLink(t, pageUrl, linkHref, permalinkHref) {
