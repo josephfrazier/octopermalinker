@@ -41,7 +41,7 @@ function checkLink(t, pageUrl, linkHref, permalinkHref) {
         // a permalink should have been inserted
         t.equal(fragileLink.nextSibling.textContent.length, 2, 'text separator present'); // can't seem to check for ' ('
         t.equal(fragileLink.nextElementSibling.href, permalinkHref, 'href is permalink');
-        t.equal(fragileLink.nextElementSibling.title, permalinkHref, 'title is permalink');
+        t.equal(fragileLink.nextElementSibling.firstChild.title, permalinkHref, 'title is permalink');
       } else if (fragileLink.nextElementSibling) {
         // a permalink should not have been inserted
         t.pass("skipping ' (' check since next link shouldn't be a permalink");
