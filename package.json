@@ -2,7 +2,7 @@
   "name": "OctoPermalinker",
   "version": "0.0.0",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=7.6.0"
   },
   "main": "lib/app.js",
   "scripts": {
