@@ -24,13 +24,14 @@ test('permalinker', (t) => {
 
 function checkLink(t, pageUrl, linkHref, permalinkHref) {
   t.test(pageUrl, (t) => {
-    t.plan(4);
+    t.plan(5);
 
     jsdom.env(pageUrl, async (err, { document }) => {
       t.ifError(err, 'created DOM');
 
       await permalink({ token: process.env.GITHUB_TOKEN }, document);
       const fragileLink = document.querySelector(`[href="${linkHref}"]`);
+      t.equal(fragileLink.title, linkHref, 'set fragile link title');
       if (permalinkHref !== linkHref) {
         // a permalink should have been inserted
         t.equal(fragileLink.nextSibling.textContent.length, 2, 'text separator present'); // can't seem to check for ' ('
