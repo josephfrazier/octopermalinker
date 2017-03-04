@@ -25,6 +25,11 @@ test('permalinker', (t) => {
     'https://github.com/HaNdTriX/generator-chrome-extension-kickstart/blob/master/app/templates/tasks/compress.js',
     'https://github.com/HaNdTriX/generator-chrome-extension-kickstart/blob/780d02c18433983d8dd13ebc0b2d3ef9b7beaf06/app/templates/tasks/compress.js',
   );
+
+  checkLink(t, 'https://github.com/docker/engine-api/blob/4290f40c056686fcaa5c9caf02eac1dde9315adf/README.md#deprecated',
+    'https://github.com/docker/docker/tree/master/client',
+    'https://github.com/docker/docker/tree/fdce2a7775ec80d769f585c0a400c6cf6615776b/client',
+  );
 });
 
 function checkLink(t, pageUrl, linkHref, permalinkHref) {
