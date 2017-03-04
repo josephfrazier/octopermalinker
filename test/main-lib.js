@@ -30,6 +30,11 @@ test('permalinker', (t) => {
     'https://github.com/docker/docker/tree/master/client',
     'https://github.com/docker/docker/tree/fdce2a7775ec80d769f585c0a400c6cf6615776b/client',
   );
+
+  checkLink(t, 'https://github.com/docker/engine-api/tree/master',
+    '#deprecated',
+    '#deprecated',
+  );
 });
 
 function checkLink(t, pageUrl, linkHref, permalinkHref) {
@@ -41,22 +46,24 @@ function checkLink(t, pageUrl, linkHref, permalinkHref) {
 
       await permalink({ token: process.env.GITHUB_TOKEN }, document);
       const fragileLink = document.querySelector(`[href="${linkHref}"]`);
-      t.equal(fragileLink.title, linkHref, 'set fragile link title');
       if (permalinkHref !== linkHref) {
         // a permalink should have been inserted
+        t.equal(fragileLink.title, linkHref, 'set fragile link title');
         t.equal(fragileLink.nextSibling.textContent.length, 2, 'text separator present'); // can't seem to check for ' ('
         t.equal(fragileLink.nextElementSibling.href, permalinkHref, 'href is permalink');
         t.equal(fragileLink.nextElementSibling.firstChild.title, permalinkHref, 'title is permalink');
       } else if (fragileLink.nextElementSibling) {
         // a permalink should not have been inserted
+        t.pass("skipping fragile link title check since next link shouldn't be a permalink");
         t.pass("skipping ' (' check since next link shouldn't be a permalink");
         t.notEqual(fragileLink.nextElementSibling.href, permalinkHref, 'href is not permalink');
-        t.pass("skipping title check since next link shouldn't be a permalink");
+        t.pass("skipping permalink title check since next link shouldn't be a permalink");
       } else {
         // there no next link, so we're good
+        t.pass("skipping fragile link title check since there isn't a next link");
         t.pass("skipping ' (' check since there isn't a next link");
         t.pass("skipping href check since there isn't a next link");
-        t.pass("skipping title check since there isn't a next link");
+        t.pass("skipping permalink title check since there isn't a next link");
       }
     });
   });
