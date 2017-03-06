@@ -48,6 +48,12 @@ test('permalinker', (t) => {
     'https://github.com/kentcdodds/cross-env/blob/b59473a62777c6e03c3fe60e685a20df8e63c3f9/other/LICENSE',
     false,
   );
+
+  checkLink(t, 'fall back to master branch',
+    'https://github.com/mikechabot/cross-env-example/pull/1#issue-139341424',
+    'https://github.com/kentcdodds/cross-env#known-limitations',
+    'https://github.com/kentcdodds/cross-env/tree/20d35cd6c16961c7205273b7214c3c6de0ed5497#known-limitations',
+  );
 });
 
 function checkLink(t, name, pageUrl, linkHref, permalinkHref, shouldPermalink = true) {
