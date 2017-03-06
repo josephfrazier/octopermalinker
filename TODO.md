@@ -1,6 +1,8 @@
 TODO
 ====
 
+* don't permalink relative times: https://github.com/mikechabot/cross-env-example/pull/1#issue-139341424
+  * see how the permalink url isn't even right
 * permlink gist comments: https://gist.github.com/nicwolff/1663989#gistcomment-616611
   * note that getCommentsAndDatetimes isn't called alongside getGistFilesAndDatetimes
   * async/await will make this easier
