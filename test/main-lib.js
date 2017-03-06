@@ -41,9 +41,16 @@ test('permalinker', (t) => {
     '#deprecated',
     '#deprecated',
   );
+
+  checkLink(t, 'badge',
+    'https://github.com/kentcdodds/cross-env/tree/b59473a62777c6e03c3fe60e685a20df8e63c3f9#cross-env',
+    'https://github.com/kentcdodds/cross-env/blob/master/other/LICENSE',
+    'https://github.com/kentcdodds/cross-env/blob/b59473a62777c6e03c3fe60e685a20df8e63c3f9/other/LICENSE',
+    false,
+  );
 });
 
-function checkLink(t, name, pageUrl, linkHref, permalinkHref) {
+function checkLink(t, name, pageUrl, linkHref, permalinkHref, shouldPermalink = true) {
   t.test(name, (t) => {
     t.plan(6);
 
@@ -52,7 +59,7 @@ function checkLink(t, name, pageUrl, linkHref, permalinkHref) {
 
       await permalink({ token: process.env.GITHUB_TOKEN }, document);
       const fragileLink = document.querySelector(`[href="${linkHref}"]`);
-      if (permalinkHref !== linkHref) {
+      if (shouldPermalink && permalinkHref !== linkHref) {
         // a permalink should have been inserted
         t.equal(fragileLink.title, linkHref, 'set fragile link title');
         t.equal(fragileLink.nextSibling.textContent.length, 2, 'text separator present'); // can't seem to check for ' ('
@@ -63,7 +70,7 @@ function checkLink(t, name, pageUrl, linkHref, permalinkHref) {
         // a permalink should not have been inserted
         t.pass("skipping fragile link title check since next link shouldn't be a permalink");
         t.pass("skipping ' (' check since next link shouldn't be a permalink");
-        t.notEqual(fragileLink.nextElementSibling.href, permalinkHref, 'href is not permalink');
+        t.notOk(fragileLink.nextElementSibling.href === permalinkHref, `${fragileLink.nextElementSibling.href} === ${permalinkHref}`);
         t.pass("skipping permalink title check since next link shouldn't be a permalink");
         t.pass("skipping permalink title check since next link shouldn't be a permalink");
       } else {
