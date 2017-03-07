@@ -37,7 +37,7 @@ test('permalinker', (t) => {
   );
 
   checkLink(t, 'markdown internal link',
-    'https://github.com/docker/engine-api/tree/master',
+    'https://github.com/docker/engine-api/tree/4290f40c056686fcaa5c9caf02eac1dde9315adf',
     '#deprecated',
     '#deprecated',
   );
