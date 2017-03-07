@@ -61,6 +61,12 @@ test('permalinker', (t) => {
     'https://github.com/mikechabot/cross-env-example/pull/1/tree/8c08f73f4b7faf0911320da5ec06f918651740f8#issue-139341424',
     false,
   );
+
+  checkLink(t, 'gist comments',
+    'https://gist.github.com/nicwolff/1663989/f7e7761a1cad124d5aa5fdf17be43b4249e5b529#gistcomment-616611',
+    'https://github.com/git/git/tree/master/contrib/completion',
+    'https://github.com/git/git/tree/fb4c62235fee8008d99ef55c4adcb1f7ea9508a3/contrib/completion',
+  );
 });
 
 function checkLink(t, name, pageUrl, linkHref, permalinkHref, shouldPermalink = true) {
