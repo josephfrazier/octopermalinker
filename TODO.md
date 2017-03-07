@@ -1,6 +1,7 @@
 TODO
 ====
 
+* tests print: `404 error making request GET https://api.github.com/repos/notifications/unsubscribe-auth/commits: "Not Found"`
 * permlink gist comments: https://gist.github.com/nicwolff/1663989#gistcomment-616611
   * note that getCommentsAndDatetimes isn't called alongside getGistFilesAndDatetimes
   * async/await will make this easier
