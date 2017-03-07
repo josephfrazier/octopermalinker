@@ -54,6 +54,13 @@ test('permalinker', (t) => {
     'https://github.com/kentcdodds/cross-env#known-limitations',
     'https://github.com/kentcdodds/cross-env/tree/20d35cd6c16961c7205273b7214c3c6de0ed5497#known-limitations',
   );
+
+  checkLink(t, 'do not permalink issue comment self-links',
+    'https://github.com/mikechabot/cross-env-example/pull/1#issue-139341424',
+    '#issue-139341424',
+    'https://github.com/mikechabot/cross-env-example/pull/1/tree/8c08f73f4b7faf0911320da5ec06f918651740f8#issue-139341424',
+    false,
+  );
 });
 
 function checkLink(t, name, pageUrl, linkHref, permalinkHref, shouldPermalink = true) {
