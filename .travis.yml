@@ -6,6 +6,8 @@ cache:
   yarn: true
   directories:
     - node_modules
+before_script:
+  - if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then yarn upgrade && git diff --exit-code; fi
 script:
   - travis_retry npm test
 before_deploy:
