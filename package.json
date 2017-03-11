@@ -8,7 +8,7 @@
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "test": "tape --require babel-register test/*.js",
+    "test": "ava",
     "version": "json -I -f assets/manifest.json -e \"this.version='`json -f package.json version`'\" && git add assets/manifest.json",
     "package-all": "npm-run-all chrome-pack firefox-pack && cp out/chrome-octopermalinker-$npm_package_version.zip out/opera-octopermalinker-$npm_package_version.zip",
     "release": "webstore upload --source out/chrome-octopermalinker-$npm_package_version.zip --auto-publish",
@@ -41,6 +41,11 @@
       "env"
     ]
   },
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
+  },
   "dependencies": {
     "babel-runtime": "^6.23.0",
     "chrome-promise": "^2.0.2",
@@ -51,6 +56,7 @@
     "github-url-to-object": "^3.0.0"
   },
   "devDependencies": {
+    "ava": "^0.18.2",
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
@@ -68,7 +74,6 @@
     "json": "^9.0.6",
     "mkdirp": "^0.5.1",
     "npm-run-all": "^4.0.2",
-    "tape": "^4.6.3",
     "web-ext": "^1.8.1",
     "webpack": "^2.2.1"
   },
