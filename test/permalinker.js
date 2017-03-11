@@ -1,5 +1,6 @@
 /* eslint-disable id-length, no-shadow */
 import test from 'ava';
+import pify from 'pify';
 import jsdom from 'jsdom';
 import permalink from '../lib/permalinker';
 
@@ -78,38 +79,31 @@ checkLink('gist comments',
 );
 
 function checkLink(name, pageUrl, archiveUrl, linkHref, permalinkHref, shouldPermalink = true) {
-  test.cb(name, (t) => {
-    t.plan(6);
-
-    jsdom.env(archiveUrl, async (err, { document }) => {
-      t.ifError(err, `loaded ${pageUrl}`);
-
-      await permalink({ token: process.env.GITHUB_TOKEN }, document);
-      const fragileLink = document.querySelector(`[href="${linkHref}"]`);
-      if (shouldPermalink && permalinkHref !== linkHref) {
-        // a permalink should have been inserted
-        t.is(fragileLink.title, linkHref, 'set fragile link title');
-        t.is(fragileLink.nextSibling.textContent.length, 2, 'text separator present'); // can't seem to check for ' ('
-        t.is(fragileLink.nextElementSibling.href, permalinkHref, 'href is permalink');
-        t.is(fragileLink.nextElementSibling.title, permalinkHref, 'title is permalink');
-        t.is(fragileLink.nextElementSibling.lastChild.title, permalinkHref, 'title is permalink');
-      } else if (fragileLink.nextElementSibling) {
-        // a permalink should not have been inserted
-        t.pass("skipping fragile link title check since next link shouldn't be a permalink");
-        t.pass("skipping ' (' check since next link shouldn't be a permalink");
-        t.falsy(fragileLink.nextElementSibling.href === permalinkHref, `${fragileLink.nextElementSibling.href} === ${permalinkHref}`);
-        t.pass("skipping permalink title check since next link shouldn't be a permalink");
-        t.pass("skipping permalink title check since next link shouldn't be a permalink");
-      } else {
-        // there no next link, so we're good
-        t.pass("skipping fragile link title check since there isn't a next link");
-        t.pass("skipping ' (' check since there isn't a next link");
-        t.pass("skipping href check since there isn't a next link");
-        t.pass("skipping permalink title check since there isn't a next link");
-        t.pass("skipping permalink title check since there isn't a next link");
-      }
-
-      t.end();
-    });
+  test(name, async (t) => {
+    const { document } = await pify(jsdom.env)(archiveUrl);
+    await permalink({ token: process.env.GITHUB_TOKEN }, document);
+    const fragileLink = document.querySelector(`[href="${linkHref}"]`);
+    if (shouldPermalink && permalinkHref !== linkHref) {
+      // a permalink should have been inserted
+      t.is(fragileLink.title, linkHref, 'set fragile link title');
+      t.is(fragileLink.nextSibling.textContent.length, 2, 'text separator present'); // can't seem to check for ' ('
+      t.is(fragileLink.nextElementSibling.href, permalinkHref, 'href is permalink');
+      t.is(fragileLink.nextElementSibling.title, permalinkHref, 'title is permalink');
+      t.is(fragileLink.nextElementSibling.lastChild.title, permalinkHref, 'title is permalink');
+    } else if (fragileLink.nextElementSibling) {
+      // a permalink should not have been inserted
+      t.pass("skipping fragile link title check since next link shouldn't be a permalink");
+      t.pass("skipping ' (' check since next link shouldn't be a permalink");
+      t.falsy(fragileLink.nextElementSibling.href === permalinkHref, `${fragileLink.nextElementSibling.href} === ${permalinkHref}`);
+      t.pass("skipping permalink title check since next link shouldn't be a permalink");
+      t.pass("skipping permalink title check since next link shouldn't be a permalink");
+    } else {
+      // there no next link, so we're good
+      t.pass("skipping fragile link title check since there isn't a next link");
+      t.pass("skipping ' (' check since there isn't a next link");
+      t.pass("skipping href check since there isn't a next link");
+      t.pass("skipping permalink title check since there isn't a next link");
+      t.pass("skipping permalink title check since there isn't a next link");
+    }
   });
 }
