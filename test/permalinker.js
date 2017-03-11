@@ -79,7 +79,7 @@ checkLink('gist comments',
 );
 
 function checkLink(name, pageUrl, archiveUrl, linkHref, permalinkHref, shouldPermalink = true) {
-  test(name, async (t) => {
+  test(`${name}: ${pageUrl}`, async (t) => {
     const { document } = await pify(jsdom.env)(archiveUrl);
     await permalink({ token: process.env.GITHUB_TOKEN }, document);
     const fragileLink = document.querySelector(`[href="${linkHref}"]`);
