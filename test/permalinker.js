@@ -92,18 +92,7 @@ function checkLink(name, pageUrl, archiveUrl, linkHref, permalinkHref, shouldPer
       t.is(fragileLink.nextElementSibling.lastChild.title, permalinkHref, 'title is permalink');
     } else if (fragileLink.nextElementSibling) {
       // a permalink should not have been inserted
-      t.pass("skipping fragile link title check since next link shouldn't be a permalink");
-      t.pass("skipping ' (' check since next link shouldn't be a permalink");
       t.falsy(fragileLink.nextElementSibling.href === permalinkHref, `${fragileLink.nextElementSibling.href} === ${permalinkHref}`);
-      t.pass("skipping permalink title check since next link shouldn't be a permalink");
-      t.pass("skipping permalink title check since next link shouldn't be a permalink");
-    } else {
-      // there no next link, so we're good
-      t.pass("skipping fragile link title check since there isn't a next link");
-      t.pass("skipping ' (' check since there isn't a next link");
-      t.pass("skipping href check since there isn't a next link");
-      t.pass("skipping permalink title check since there isn't a next link");
-      t.pass("skipping permalink title check since there isn't a next link");
-    }
+    } // else, there no next link, so we're good
   });
 }
