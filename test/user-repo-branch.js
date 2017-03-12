@@ -7,7 +7,6 @@ test('https://github.com/akhodakivskiy/VimFx', (t) => {
     user: 'akhodakivskiy',
     repo: 'VimFx',
     branch: 'master',
-    href: 'https://github.com/akhodakivskiy/VimFx/tree/master',
   });
 });
 
