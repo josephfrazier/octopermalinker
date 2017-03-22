@@ -7,6 +7,15 @@ import permalink from '../lib/permalinker';
 require('dotenv-safe').config();
 
 checkLink({
+  name: 'search links',
+  pageUrl: 'https://github.com/moll/vim-node/issues/24#issuecomment-132334681',
+  archiveUrl: 'https://web.archive.org/web/20170322175057id_/https://github.com/moll/vim-node/issues/24#issuecomment-132334681',
+  linkHref: 'https://github.com/moll/vim-node/search?utf8=%E2%9C%93&q=node_modules',
+  permalinkHref: 'https://github.com/moll/vim-node/search/tree/e02ea6e4d9acab19fb7f598be08e5eec5d239999',
+  shouldPermalink: false,
+});
+
+checkLink({
   name: 'issue comment',
   pageUrl: 'https://github.com/isaacs/github/issues/625#issuecomment-203464167',
   archiveUrl: 'https://web.archive.org/web/20170310233459id_/https://github.com/isaacs/github/issues/625',
