@@ -9,16 +9,16 @@ First off, thanks for taking the time to contribute! :tada: :+1:
 
 To build and run the extension follow these steps.
 
-0. Clone the repository.
-0. Run `npm install` to setup the project and install all required dependencies.
-0. Build and load the extension:
+1. Clone the repository.
+1. Run `npm install` to setup the project and install all required dependencies.
+1. Build and load the extension:
    * Firefox (Quickstart):
-     0. `npm run firefox-open`
+     1. `npm run firefox-open`
    * Chrome (Quickstart):
-     0. `npm run chrome-open`
+     1. `npm run chrome-open`
    * Chrome (Long Version):
-     0. To build the extension once run `npm run chrome-build` or `npm run chrome-watch` during development.
-     0. Load extension https://developer.chrome.com/extensions/getstarted#unpacked.
+     1. To build the extension once run `npm run chrome-build` or `npm run chrome-watch` during development.
+     1. Load extension https://developer.chrome.com/extensions/getstarted#unpacked.
 
 ## Pull Request Guidelines
 
