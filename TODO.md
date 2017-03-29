@@ -1,6 +1,7 @@
 TODO
 ====
 
+* don't permalink homepage self-links: https://github.com/stefanbuck/awesome-browser-extensions-for-github#table-of-content
 * tests print: `404 error making request GET https://api.github.com/repos/notifications/unsubscribe-auth/commits: "Not Found"`
 * permalink urls in code blobs: https://github.com/MatAtBread/fast-async/blob/fbd2c4db54813b5130f49a46f6280bcad17c7f53/plugin.js#L35
   * see if github provides blame api to figure out when it was committed
