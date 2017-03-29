@@ -1,6 +1,7 @@
 TODO
 ====
 
+* permalink raw.githubusercontent.com links: https://web.archive.org/web/20170329173434id_/https://github.com/github/markup/issues/1022#issue-215368549
 * don't relink on forward/back (click on a file, then go back): https://github.com/gorhill/uBlock
 * don't permalink homepage self-links: https://github.com/stefanbuck/awesome-browser-extensions-for-github#table-of-content
 * tests print: `404 error making request GET https://api.github.com/repos/notifications/unsubscribe-auth/commits: "Not Found"`
