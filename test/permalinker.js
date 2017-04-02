@@ -1,5 +1,6 @@
 /* eslint-disable id-length, no-shadow */
 import test from 'ava';
+import fse from 'fs-extra';
 import pify from 'pify';
 import jsdom from 'jsdom';
 import permalink from '../lib/permalinker';
@@ -99,7 +100,14 @@ checkLink({
 
 function checkLink({ name, pageUrl, archiveUrl, linkHref, permalinkHref, shouldPermalink = true }) {
   test(`${name}: ${pageUrl}`, async (t) => {
-    const { document } = await pify(jsdom.env)(archiveUrl);
+    let document;
+    const fixturePath = `${__dirname}/fixtures/${name}/page.html`;
+    try {
+      document = (await pify(jsdom.env)(fixturePath)).document;
+    } catch (err) {
+      document = (await pify(jsdom.env)(archiveUrl)).document;
+      await pify(fse.outputFile)(fixturePath, document.documentElement.outerHTML);
+    }
     await permalink({ token: process.env.GITHUB_TOKEN }, document);
     const fragileLink = document.querySelector(`[href="${linkHref}"]`);
     if (shouldPermalink && permalinkHref !== linkHref) {
