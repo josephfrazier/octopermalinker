@@ -2,6 +2,7 @@
 import test from 'ava';
 import fse from 'fs-extra';
 import pify from 'pify';
+import got from 'got';
 import jsdom from 'jsdom';
 import permalink from '../lib/permalinker';
 
@@ -100,14 +101,12 @@ checkLink({
 
 function checkLink({ name, pageUrl, archiveUrl, linkHref, permalinkHref, shouldPermalink = true }) {
   test(`${name}: ${pageUrl}`, async (t) => {
-    let document;
     const fixturePath = `${__dirname}/fixtures/${name}/page.html`;
-    try {
-      document = (await pify(jsdom.env)(fixturePath)).document;
-    } catch (err) {
-      document = (await pify(jsdom.env)(archiveUrl)).document;
-      await pify(fse.outputFile)(fixturePath, document.documentElement.outerHTML);
+    if (!fse.existsSync(fixturePath)) {
+      const { body } = await got(archiveUrl);
+      await pify(fse.outputFile)(fixturePath, body);
     }
+    const { document } = await pify(jsdom.env)(fixturePath);
     await permalink({ token: process.env.GITHUB_TOKEN }, document);
     const fragileLink = document.querySelector(`[href="${linkHref}"]`);
     if (shouldPermalink && permalinkHref !== linkHref) {
