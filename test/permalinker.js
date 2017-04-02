@@ -101,7 +101,7 @@ checkLink({
 
 function checkLink({ name, pageUrl, archiveUrl, linkHref, permalinkHref, shouldPermalink = true }) {
   test(`${name}: ${pageUrl}`, async (t) => {
-    const fixturePath = `${__dirname}/fixtures/${name}/page.html`;
+    const fixturePath = `${__dirname}/fixtures/${name.replace(/ /g, '_')}/page.html`;
     if (!fse.existsSync(fixturePath)) {
       const { body } = await got(archiveUrl);
       await pify(fse.outputFile)(fixturePath, body);
