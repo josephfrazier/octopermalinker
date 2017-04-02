@@ -51,6 +51,7 @@
     "chrome-promise": "^2.0.2",
     "concat-map": "^0.0.1",
     "domify": "^1.4.0",
+    "fs-extra": "^2.1.2",
     "github-api": "^3.0.0",
     "github-injection": "^0.3.0",
     "github-url-to-object": "^3.0.0"
