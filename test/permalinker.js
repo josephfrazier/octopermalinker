@@ -119,6 +119,8 @@ function checkLink({ name, pageUrl, archiveUrl, linkHref, permalinkHref, shouldP
     } else if (fragileLink.nextElementSibling) {
       // a permalink should not have been inserted
       t.falsy(fragileLink.nextElementSibling.href === permalinkHref, `${fragileLink.nextElementSibling.href} === ${permalinkHref}`);
-    } // else, there no next link, so we're good
+    } else {
+      t.pass('a permalink should not have been inserted, and there was no next link');
+    }
   });
 }
