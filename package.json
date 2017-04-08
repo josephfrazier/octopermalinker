@@ -6,7 +6,7 @@
   },
   "main": "lib/app.js",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "standard",
     "pretest": "npm run lint",
     "test": "ava",
     "version": "json -I -f assets/manifest.json -e \"this.version='`json -f package.json version`'\" && git add assets/manifest.json",
@@ -67,9 +67,6 @@
     "chrome-webstore-upload-cli": "^1.1.1",
     "copy-webpack-plugin": "^4.0.1",
     "dotenv-safe": "^4.0.3",
-    "eslint": "^3.17.0",
-    "eslint-config-airbnb-base": "^11.1.1",
-    "eslint-plugin-import": "^2.2.0",
     "fs-extra": "^2.1.2",
     "got": "^6.7.1",
     "jsdom": "^9.11.0",
@@ -77,6 +74,7 @@
     "mkdirp": "^0.5.1",
     "npm-run-all": "^4.0.2",
     "pify": "^2.3.0",
+    "standard": "^10.0.1",
     "web-ext": "^1.8.1",
     "webpack": "^2.2.1"
   },

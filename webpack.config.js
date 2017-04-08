@@ -1,30 +1,30 @@
-const path = require('path');
+const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin'); // eslint-disable-line
 
 module.exports = {
   entry: {
     app: './lib/app',
-    options: './lib/options/page',
+    options: './lib/options/page'
   },
   devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js',
+    filename: '[name].js'
   },
   plugins: [
     new CopyWebpackPlugin([
-      { from: 'assets' },
+      { from: 'assets' }
     ], {
-      ignore: ['manifest.json'],
-    }),
+      ignore: ['manifest.json']
+    })
   ],
   module: {
     loaders: [
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
-        loader: 'babel-loader',
-      },
-    ],
-  },
-};
+        loader: 'babel-loader'
+      }
+    ]
+  }
+}
