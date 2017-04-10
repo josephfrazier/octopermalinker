@@ -1,0 +1,896 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+
+
+  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-612da304eac9a72f5d085232387f7f5cd82df6c73120fd97fcf0bdefacbd9b16.css" integrity="sha256-YS2jBOrJpy9dCFIyOH9/XNgt9scxIP2X/PC976y9mxY=" media="all" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-9e591dcc1f30d2a6ac3773da2f8c05987a4a148bae15713c4be9bb62b6e92b26.css" integrity="sha256-nlkdzB8w0qasN3PaL4wFmHpKFIuuFXE8S+m7YrbpKyY=" media="all" rel="stylesheet" />
+  
+  
+  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/site-f4fa6ace91e5f0fabb47e8405e5ecf6a9815949cd3958338f6578e626cd443d7.css" integrity="sha256-9PpqzpHl8Pq7R+hAXl7PapgVlJzTlYM49leOYmzUQ9c=" media="all" rel="stylesheet" />
+  
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>Stop supporting pre-ES5 browsers · Issue #108 · slevithan/xregexp · GitHub</title>
+  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+
+    
+    <meta content="https://avatars1.githubusercontent.com/u/1466797?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="Stop supporting pre-ES5 browsers · Issue #108 · slevithan/xregexp" property="og:title" /><meta content="https://github.com/slevithan/xregexp/issues/108" property="og:url" /><meta content="Pre-ES5 browsers include e.g. IE 8 and earlier. Right now XRegExp still supports ancient browsers like IE 5.5, Firefox 1.5, Chrome 1, and Safari 3, which is totally unnecessary. But there&#39;s not muc..." property="og:description" />
+
+  <link rel="assets" href="https://assets-cdn.github.com/">
+  
+  <meta name="pjax-timeout" content="1000">
+  
+  <meta name="request-id" content="CCF9:0FFA:26E162C:3F3336D:58EBF994" data-pjax-transient>
+  
+
+  <meta name="selected-link" value="repo_issues" data-pjax-transient>
+
+  <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+    <meta name="google-analytics" content="UA-3769691-2">
+
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="https://collector.githubapp.com/github-external/browser_event" name="octolytics-event-url" /><meta content="CCF9:0FFA:26E162C:3F3336D:58EBF994" name="octolytics-dimension-request_id" />
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/issues/show" data-pjax-transient="true" name="analytics-location" />
+
+
+
+
+  <meta class="js-ga-set" name="dimension1" content="Logged Out">
+
+
+  
+
+      <meta name="hostname" content="github.com">
+  <meta name="user-login" content="">
+
+      <meta name="expected-hostname" content="github.com">
+    <meta name="js-proxy-site-detection-payload" content="MTFlZGUwOWYxZTBkYjFhNDIyNGQ4ZjAyNjE1MTc5ZjI1ZTVlNjgyN2Q5NzNhZTQwOGM1NDU0ZTFmMjI4ODU5ZHx7InJlbW90ZV9hZGRyZXNzIjoiMjA3LjI0MS4yMjYuMjE5IiwicmVxdWVzdF9pZCI6IkNDRjk6MEZGQToyNkUxNjJDOjNGMzMzNkQ6NThFQkY5OTQiLCJ0aW1lc3RhbXAiOjE0OTE4NTk4NjEsImhvc3QiOiJnaXRodWIuY29tIn0=">
+
+
+  <meta name="html-safe-nonce" content="94742b0c57de344c7c279da9baf040980602e12e">
+
+  <meta http-equiv="x-pjax-version" content="2fcc845e19df9d36134e232e5e95caa9">
+  
+
+    
+  <meta name="description" content="xregexp - Extended JavaScript regular expressions">
+  <meta name="go-import" content="github.com/slevithan/xregexp git https://github.com/slevithan/xregexp.git">
+
+  <meta content="1466797" name="octolytics-dimension-user_id" /><meta content="slevithan" name="octolytics-dimension-user_login" /><meta content="3537312" name="octolytics-dimension-repository_id" /><meta content="slevithan/xregexp" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="3537312" name="octolytics-dimension-repository_network_root_id" /><meta content="slevithan/xregexp" name="octolytics-dimension-repository_network_root_nwo" />
+        <link href="https://github.com/slevithan/xregexp/commits/master.atom" rel="alternate" title="Recent Commits to xregexp:master" type="application/atom+xml">
+
+
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#000000">
+  <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+<meta name="theme-color" content="#1e2327">
+
+
+  <meta name="u2f-support" content="true">
+
+  </head>
+
+  <body class="logged-out env-production emoji-size-boost">
+    
+
+
+  <div class="position-relative js-header-wrapper ">
+    <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+    <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress"></div></div>
+
+    
+    
+    
+
+
+
+          <header class="site-header js-details-container Details" role="banner">
+  <div class="container-responsive">
+    <a class="header-logo-invertocat" href="https://github.com/" aria-label="Homepage" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+      <svg aria-hidden="true" class="octicon octicon-mark-github" height="32" version="1.1" viewBox="0 0 16 16" width="32"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+    </a>
+
+    <button class="btn-link float-right site-header-toggle js-details-target" type="button" aria-label="Toggle navigation">
+      <svg aria-hidden="true" class="octicon octicon-three-bars" height="24" version="1.1" viewBox="0 0 12 16" width="18"><path fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"/></svg>
+    </button>
+
+    <div class="site-header-menu">
+      <nav class="site-header-nav">
+        <a href="/features" class="js-selected-navigation-item nav-item" data-ga-click="Header, click, Nav menu - item:features" data-selected-links="/features /features">
+          Features
+</a>        <a href="/business" class="js-selected-navigation-item nav-item" data-ga-click="Header, click, Nav menu - item:business" data-selected-links="/business /business/security /business/customers /business">
+          Business
+</a>        <a href="/explore" class="js-selected-navigation-item nav-item" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship /showcases /explore">
+          Explore
+</a>        <a href="/pricing" class="js-selected-navigation-item nav-item" data-ga-click="Header, click, Nav menu - item:pricing" data-selected-links="/pricing /pricing">
+          Pricing
+</a>      </nav>
+
+      <div class="site-header-actions">
+          <div class="header-search scoped-search site-scoped-search js-site-search" role="search">
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/slevithan/xregexp/search" class="js-site-search-form" data-scoped-search-url="/slevithan/xregexp/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+    <label class="form-control header-search-wrapper js-chromeless-input-container">
+        <a href="/slevithan/xregexp/issues/108" class="header-search-scope no-underline">This repository</a>
+      <input type="text"
+        class="form-control header-search-input js-site-search-focus js-site-search-field is-clearable"
+        data-hotkey="s"
+        name="q"
+        value=""
+        placeholder="Search"
+        aria-label="Search this repository"
+        data-unscoped-placeholder="Search GitHub"
+        data-scoped-placeholder="Search"
+        autocapitalize="off">
+        <input type="hidden" class="js-site-search-type-field" name="type" >
+    </label>
+</form></div>
+
+
+          <a class="text-bold site-header-link" href="/login?return_to=%2Fslevithan%2Fxregexp%2Fissues%2F108" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+            <span class="text-gray">or</span>
+            <a class="text-bold site-header-link" href="/join?source=header-repo" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  </div>
+
+  <div id="start-of-content" class="accessibility-aid"></div>
+
+    <div id="js-flash-container">
+</div>
+
+
+
+  <div role="main">
+        <div itemscope itemtype="http://schema.org/SoftwareSourceCode">
+    <div id="js-repo-pjax-container" data-pjax-container>
+        
+
+
+  <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+    <div class="container repohead-details-container">
+
+
+      <ul class="pagehead-actions">
+  <li>
+      <a href="/login?return_to=%2Fslevithan%2Fxregexp"
+    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+    aria-label="You must be signed in to watch a repository" rel="nofollow">
+    <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+    Watch
+  </a>
+  <a class="social-count" href="/slevithan/xregexp/watchers"
+     aria-label="87 users are watching this repository">
+    87
+  </a>
+
+  </li>
+
+  <li>
+      <a href="/login?return_to=%2Fslevithan%2Fxregexp"
+    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+    aria-label="You must be signed in to star a repository" rel="nofollow">
+    <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"/></svg>
+    Star
+  </a>
+
+    <a class="social-count js-social-count" href="/slevithan/xregexp/stargazers"
+      aria-label="2050 users starred this repository">
+      2,050
+    </a>
+
+  </li>
+
+  <li>
+      <a href="/login?return_to=%2Fslevithan%2Fxregexp"
+        class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+        aria-label="You must be signed in to fork a repository" rel="nofollow">
+        <svg aria-hidden="true" class="octicon octicon-repo-forked" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+        Fork
+      </a>
+
+    <a href="/slevithan/xregexp/network" class="social-count"
+       aria-label="199 users forked this repository">
+      199
+    </a>
+  </li>
+</ul>
+
+      <h1 class="public ">
+  <svg aria-hidden="true" class="octicon octicon-repo" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg>
+  <span class="author" itemprop="author"><a href="/slevithan" class="url fn" rel="author">slevithan</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a href="/slevithan/xregexp" data-pjax="#js-repo-pjax-container">xregexp</a></strong>
+
+</h1>
+
+    </div>
+    <div class="container">
+      
+<nav class="reponav js-repo-nav js-sidenav-container-pjax"
+     itemscope
+     itemtype="http://schema.org/BreadcrumbList"
+     role="navigation"
+     data-pjax="#js-repo-pjax-container">
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="/slevithan/xregexp" class="js-selected-navigation-item reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /slevithan/xregexp" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-code" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"/></svg>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a href="/slevithan/xregexp/issues" class="js-selected-navigation-item selected reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /slevithan/xregexp/issues" itemprop="url">
+        <svg aria-hidden="true" class="octicon octicon-issue-opened" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg>
+        <span itemprop="name">Issues</span>
+        <span class="counter">12</span>
+        <meta itemprop="position" content="2">
+</a>    </span>
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="/slevithan/xregexp/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /slevithan/xregexp/pulls" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-git-pull-request" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+      <span itemprop="name">Pull requests</span>
+      <span class="counter">3</span>
+      <meta itemprop="position" content="3">
+</a>  </span>
+
+    <a href="/slevithan/xregexp/projects" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /slevithan/xregexp/projects">
+      <svg aria-hidden="true" class="octicon octicon-project" height="16" version="1.1" viewBox="0 0 15 16" width="15"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
+      Projects
+      <span class="counter">0</span>
+</a>
+    <a href="/slevithan/xregexp/wiki" class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /slevithan/xregexp/wiki">
+      <svg aria-hidden="true" class="octicon octicon-book" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"/></svg>
+      Wiki
+</a>
+
+  <a href="/slevithan/xregexp/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /slevithan/xregexp/pulse">
+    <svg aria-hidden="true" class="octicon octicon-pulse" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M11.5 8L8.8 5.4 6.6 8.5 5.5 1.6 2.38 8H0v2h3.6l.9-1.8.9 5.4L9 8.5l1.6 1.5H14V8z"/></svg>
+    Pulse
+</a>
+  <a href="/slevithan/xregexp/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /slevithan/xregexp/graphs">
+    <svg aria-hidden="true" class="octicon octicon-graph" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"/></svg>
+    Graphs
+</a>
+
+</nav>
+
+    </div>
+  </div>
+
+<div class="container new-discussion-timeline experiment-repo-nav">
+  <div class="repository-content">
+
+    
+          
+<style type="text/css" media="screen">
+  span.labelstyle-e10c02, .linked-labelstyle-e10c02 {  background-color: #e10c02 !important;  color: #fff !important;}.labelstyle-e10c02.selected {  background-color: #e10c02 !important;  color: #fff !important;}.label-select-menu .labelstyle-e10c02.selected {  background:rgba(225, 12, 2, 0.12) !important;  color: #990801 !important;}
+
+span.labelstyle-003987, .linked-labelstyle-003987 {  background-color: #003987 !important;  color: #fff !important;}.labelstyle-003987.selected {  background-color: #003987 !important;  color: #fff !important;}.label-select-menu .labelstyle-003987.selected {  background:rgba(0, 57, 135, 0.12) !important;  color: #004099 !important;}
+
+span.labelstyle-3794dc, .linked-labelstyle-3794dc {  background-color: #3794dc !important;  color: #fff !important;}.labelstyle-3794dc.selected {  background-color: #3794dc !important;  color: #fff !important;}.label-select-menu .labelstyle-3794dc.selected {  background:rgba(55, 148, 220, 0.12) !important;  color: #266699 !important;}
+
+span.labelstyle-999999, .linked-labelstyle-999999 {  background-color: #999999 !important;  color: #333333 !important;}.labelstyle-999999.selected {  background-color: #999999 !important;  color: #333333 !important;}.label-select-menu .labelstyle-999999.selected {  background:rgba(153, 153, 153, 0.12) !important;  color: #999999 !important;}
+
+span.labelstyle-93008a, .linked-labelstyle-93008a {  background-color: #93008a !important;  color: #fff !important;}.labelstyle-93008a.selected {  background-color: #93008a !important;  color: #fff !important;}.label-select-menu .labelstyle-93008a.selected {  background:rgba(147, 0, 138, 0.12) !important;  color: #99008f !important;}
+
+span.labelstyle-ffa200, .linked-labelstyle-ffa200 {  background-color: #ffa200 !important;  color: #332000 !important;}.labelstyle-ffa200.selected {  background-color: #ffa200 !important;  color: #332000 !important;}.label-select-menu .labelstyle-ffa200.selected {  background:rgba(255, 162, 0, 0.12) !important;  color: #996100 !important;}
+
+span.labelstyle-000000, .linked-labelstyle-000000 {  background-color: #000000 !important;  color: #fff !important;}.labelstyle-000000.selected {  background-color: #000000 !important;  color: #fff !important;}.label-select-menu .labelstyle-000000.selected {  background:rgba(247, 247, 247, 1.0) !important;  color: #666666 !important;}
+</style>
+
+<div class="issues-listing" data-pjax>
+  
+  <div id="show_issue" class="js-issues-results">
+
+    
+  <div
+    id="partial-discussion-header"
+    class="gh-header js-details-container Details js-socket-channel js-updatable-content issue"
+    data-channel="issue:108510317"
+    data-url="/slevithan/xregexp/issues/108/show_partial?partial=issues%2Ftitle">
+
+  <div class="gh-header-show ">
+      <div class="gh-header-actions">
+          <a href="/slevithan/xregexp/issues/new" class="btn btn-sm btn-primary float-right" data-hotkey="c">
+            New issue
+          </a>
+      </div>
+
+    <h1 class="gh-header-title">
+      <span class="js-issue-title">
+        Stop supporting pre-ES5 browsers
+      </span>
+      <span class="gh-header-number">#108</span>
+    </h1>
+  </div>
+
+
+  <div class="TableObject gh-header-meta">
+    <div class="TableObject-item">
+        <div class="state state-open">
+          <svg aria-hidden="true" class="octicon octicon-issue-opened" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg>
+          Open
+        </div>
+    </div>
+    <div class="TableObject-item TableObject-item--primary">
+        <a href="/slevithan" class="author">slevithan</a>  opened this <span class="noun">Issue</span> <relative-time datetime="2015-09-27T03:14:58Z">Sep 27, 2015</relative-time>
+        &middot; 3 comments
+    </div>
+  </div>
+</div>
+
+
+    <div id="discussion_bucket" class="clearfix">
+      <div class="discussion-sidebar">
+        <div id="partial-discussion-sidebar"
+  class="js-socket-channel js-updatable-content"
+  data-channel="issue:108510317"
+  data-url="/slevithan/xregexp/issues/108/show_partial?partial=issues%2Fsidebar">
+
+  <div class="discussion-sidebar-item sidebar-assignee js-discussion-sidebar-item">
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/slevithan/xregexp/issues/108?partial=issues%2Fsidebar%2Fshow%2Fassignees" class="js-issue-sidebar-form" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="O7FDqdbrlTVC4H1M8UZslJrXB6TZYon+PA7tV7GRaseGppqu313AYDVhltKfSTTkdh/s5PmdrmgYvouzOOea9w==" /></div>
+    
+  <h3 class="discussion-sidebar-heading">
+    Assignees
+  </h3>
+
+
+    <span class="css-truncate">
+    No one assigned
+</span>
+
+</form></div>
+
+  <div class="discussion-sidebar-item sidebar-labels js-discussion-sidebar-item">
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/slevithan/xregexp/issues/108?partial=issues%2Fsidebar%2Fshow%2Flabels" class="js-issue-sidebar-form" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="DLZHbJoJplkVCwocP2V5dkutTl/rJr1nydLvT2bhWuKxoZ5rk7/zDGKK4YJRaiEGp2WlH8vZmvHtYomr75eq0g==" /></div>
+      
+  <h3 class="discussion-sidebar-heading">
+    Labels
+  </h3>
+
+
+    <div class="labels css-truncate">
+      <a href="/slevithan/xregexp/labels/change" class="label css-truncate-target linked-labelstyle-003987" title="change">change</a>
+
+</div>
+
+</form></div>
+
+    <div class="discussion-sidebar-item js-discussion-sidebar-item">
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/slevithan/xregexp/projects/issues/108" class="js-issue-sidebar-form" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="io28DNvenGESdPstg28aOreWnrkDvuRPforb3BU8Y/BXqIhE81aXPtLYAwihDKeai4/RTQnI5945gQkhA172bg==" /></div>
+    
+  <h3 class="discussion-sidebar-heading">
+    Projects
+  </h3>
+
+
+    <span class="css-truncate">
+    None yet
+</span>
+
+</form></div>
+
+  <div class="discussion-sidebar-item sidebar-milestone js-discussion-sidebar-item">
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/slevithan/xregexp/issues/108/set_milestone?partial=issues%2Fsidebar%2Fshow%2Fmilestone" class="js-issue-sidebar-form" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="P3WmmdrQwyuymfJN9btDv/CilAOWkIhfX9z7q+esrvPwbuK5gDPdFCHCdV9nlFO+A5PaiDLdG0heRXCfyuj3xA==" /></div>
+    
+  <h3 class="discussion-sidebar-heading">
+    Milestone
+  </h3>
+
+
+      <span class="progress-bar progress-bar-small"><span class="progress" style="width: 0.0%">&nbsp;</span></span>
+  <a title="v4.0.0" href="/slevithan/xregexp/milestone/3" class="milestone-name css-truncate">
+    <strong class="css-truncate-target">v4.0.0</strong>
+  </a>
+
+</form></div>
+
+  
+  <div id="partial-users-participants" class="discussion-sidebar-item">
+  <div class="participation">
+
+    <h3 class="discussion-sidebar-heading">
+      2 participants
+    </h3>
+    <div class="participation-avatars">
+        <a class="participant-avatar tooltipped tooltipped-n" aria-label="slevithan" href="/slevithan"><img alt="@slevithan" class="avatar" height="26" src="https://avatars0.githubusercontent.com/u/1466797?v=3&amp;s=52" width="26" /> </a>
+        <a class="participant-avatar tooltipped tooltipped-n" aria-label="josephfrazier" href="/josephfrazier"><img alt="@josephfrazier" class="avatar" height="26" src="https://avatars3.githubusercontent.com/u/6473925?v=3&amp;s=52" width="26" /> </a>
+    </div>
+  </div>
+</div>
+
+
+  
+
+</div>
+
+      </div>
+
+      <div class="discussion-timeline js-quote-selection-container ">
+
+        <div class="js-discussion js-socket-channel" data-channel="marked-as-read:issue:108510317">
+          
+
+  <div class="timeline-comment-wrapper js-comment-container">
+    <a href="/slevithan"><img alt="@slevithan" class="timeline-comment-avatar" height="44" src="https://avatars3.githubusercontent.com/u/1466797?v=3&amp;s=88" width="44" /></a>
+    
+
+<div id="issue-108510317"
+     class="comment previewable-edit timeline-comment js-comment js-task-list-container
+                     "
+     data-body-version="2101c4452a23cffc02788865828b293b">
+
+  
+<div class="timeline-comment-header">
+  <div class="timeline-comment-actions">
+
+
+  </div>
+
+    
+    <span class="timeline-comment-label text-bold tooltipped tooltipped-multiline tooltipped-s" aria-label="This user is the owner of the xregexp repository.">
+      Owner
+    </span>
+
+
+
+  <div class="timeline-comment-header-text">
+
+    <strong>
+      <a href="/slevithan" class="author">slevithan</a> 
+    </strong>
+
+    commented
+
+    <a href="#issue-108510317" class="timestamp"><relative-time datetime="2015-09-27T03:14:58Z">Sep 27, 2015</relative-time></a>
+
+  </div>
+</div>
+
+
+  <div class="edit-comment-hide">
+    <table class="d-block">
+      <tbody class="d-block">
+        <tr class="d-block">
+          <td class="d-block comment-body markdown-body  js-comment-body">
+              <p>Pre-ES5 browsers include e.g. IE 8 and earlier. Right now XRegExp still supports ancient browsers like IE 5.5, Firefox 1.5, Chrome 1, and Safari 3, which is totally unnecessary. But there's not much benefit to dropping support for these browsers until XRegExp can rely on ES5.</p>
+<p>Some things to do after dropping pre-ES5 support:</p>
+<ul>
+<li>Generally take advantage of any ES5 features.
+<ul>
+<li>Use character indexing on strings instead of <code>charAt</code>, use <code>Array.prototype.indexOf</code>, etc.</li>
+</ul>
+</li>
+<li>Possibly kill the entire custom split implementation and make <code>XRegExp.split</code> just defer to <code>String.prototype.split</code>, if there are few enough edge cases that ES5 browsers get wrong.</li>
+<li>Possibly kill handling for inconsistencies related to nonparticipating capturing groups (search for <code>nonparticipating</code> in code), if ES5 browsers generally get this right.</li>
+<li>Possibly kill the <code>[^]</code> and <code>[]</code> transforms if all ES5 browsers get this right.</li>
+</ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+      
+
+<div class="comment-reactions has-reactions js-reactions-container "
+
+    >
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/slevithan/xregexp/reactions/update" class="js-pick-reaction" data-remote="true" data-type="json" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="oNC+XQKXKDLo4iG2lCV8dQNkX3YjFrXnjjHF73oGdUdjwLLA02Em0mIqBxasGMZzT/Wttevto0UCNne6PvI2Ig==" /></div>
+      <input type="hidden" name="input[subjectId]" value="MDU6SXNzdWUxMDg1MTAzMTc=">
+
+      <div class="comment-reactions-options">
+          <button disabled
+                  class="btn-link reaction-summary-item tooltipped tooltipped-se tooltipped-multiline "
+                  name="input[content]"
+                  type="submit"
+                  value="THUMBS_UP react"
+                  aria-label="sindresorhus and rob3c reacted with thumbs up emoji">
+            <g-emoji alias="+1" class="emoji mr-1" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png" ios-version="6.0">👍</g-emoji>
+            2
+          </button>
+      </div>
+</form></div>
+
+  </div>
+
+</div>
+
+  </div>
+  
+
+
+      
+
+
+  <div class="discussion-item discussion-item-labeled">
+    <div class="discussion-item-header" id="event-420057089">
+
+      <span class="discussion-item-icon">
+        <svg aria-hidden="true" class="octicon octicon-tag" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M7.73 1.73C7.26 1.26 6.62 1 5.96 1H3.5C2.13 1 1 2.13 1 3.5v2.47c0 .66.27 1.3.73 1.77l6.06 6.06c.39.39 1.02.39 1.41 0l4.59-4.59a.996.996 0 0 0 0-1.41L7.73 1.73zM2.38 7.09c-.31-.3-.47-.7-.47-1.13V3.5c0-.88.72-1.59 1.59-1.59h2.47c.42 0 .83.16 1.13.47l6.14 6.13-4.73 4.73-6.13-6.15zM3.01 3h2v2H3V3h.01z"/></svg>
+      </span>
+      <img alt="@slevithan" class="avatar" height="16" src="https://avatars2.githubusercontent.com/u/1466797?v=3&amp;s=32" width="16" />
+      <a href="/slevithan" class="author">slevithan</a>
+      
+      added the <span class="label-color" style="background-color: #003987;"><a href="/slevithan/xregexp/labels/change" style="color: #fff">change</a></span> label <a href="#event-420057089" class="timestamp"><relative-time class="timestamp" datetime="2015-09-27T03:14:58Z">Sep 27, 2015</relative-time></a>
+    </div>
+  </div>
+
+
+
+
+
+      
+
+
+  <div class="discussion-item discussion-item-milestoned">
+    <div class="discussion-item-header" id="event-420057090">
+
+      <span class="discussion-item-icon">
+        <svg aria-hidden="true" class="octicon octicon-milestone" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M8 2H6V0h2v2zm4 5H2c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h10l2 2-2 2zM8 4H6v2h2V4zM6 16h2V8H6v8z"/></svg>
+      </span>
+      <img alt="@slevithan" class="avatar" height="16" src="https://avatars2.githubusercontent.com/u/1466797?v=3&amp;s=32" width="16" />
+      <a href="/slevithan" class="author">slevithan</a>
+      
+      added this to the <a href="/slevithan/xregexp/milestone/3" class="discussion-item-entity" title="by slevithan at 2015-09-27 03:14:58">v4.0.0</a> milestone <a href="#event-420057090" class="timestamp"><relative-time class="timestamp" datetime="2015-09-27T03:14:58Z">Sep 27, 2015</relative-time></a>
+    </div>
+  </div>
+
+
+
+  
+      <div class="discussion-item discussion-item-ref">
+    <div class="discussion-item-header" id="ref-issue-91631106">
+      <span class="discussion-item-icon">
+        <svg aria-hidden="true" class="octicon octicon-bookmark" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M9 0H1C.27 0 0 .27 0 1v15l5-3.09L10 16V1c0-.73-.27-1-1-1zm-.78 4.25L6.36 5.61l.72 2.16c.06.22-.02.28-.2.17L5 6.6 3.12 7.94c-.19.11-.25.05-.2-.17l.72-2.16-1.86-1.36c-.17-.16-.14-.23.09-.23l2.3-.03.7-2.16h.25l.7 2.16 2.3.03c.23 0 .27.08.09.23h.01z"/></svg>
+      </span>
+
+      <img alt="@slevithan" class="avatar" height="16" src="https://avatars2.githubusercontent.com/u/1466797?v=3&amp;s=32" width="16" />
+      <a href="/slevithan" class="author" truncate="true">slevithan</a>
+      
+
+      referenced
+      this issue
+      <a class="timestamp" href="#ref-issue-91631106">
+        <relative-time datetime="2016-02-24T00:27:46Z">Feb 24, 2016</relative-time>
+      </a>
+    </div>
+
+      <span class="state state-open float-right">
+          <svg aria-hidden="true" class="octicon octicon-issue-opened" height="14" version="1.1" viewBox="0 0 14 16" width="12"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg>
+        Open
+      </span>
+
+
+
+    <h4 class="discussion-item-ref-title">
+      <a href="/slevithan/xregexp/issues/89" class="title-link">
+        Is it possible to get a build that does not add to the native String and Regexp prototypes?
+        <span class="issue-num">#89</span>
+</a>    </h4>
+    
+  </div>
+
+
+  <div class="timeline-comment-wrapper js-comment-container">
+    <a href="/josephfrazier"><img alt="@josephfrazier" class="timeline-comment-avatar" height="44" src="https://avatars0.githubusercontent.com/u/6473925?v=3&amp;s=88" width="44" /></a>
+    
+
+<div id="issuecomment-280100000"
+     class="comment previewable-edit timeline-comment js-comment js-task-list-container
+                     "
+     data-body-version="a6c5dcfd9b443ad013924732f7e5adf7">
+
+  
+<div class="timeline-comment-header">
+  <div class="timeline-comment-actions">
+
+
+  </div>
+
+    
+    <span class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s" aria-label="This user has previously committed to the xregexp repository.">
+      Contributor
+    </span>
+
+
+
+  <div class="timeline-comment-header-text">
+
+    <strong>
+      <a href="/josephfrazier" class="author">josephfrazier</a> 
+    </strong>
+
+    commented
+
+    <a href="#issuecomment-280100000" class="timestamp"><relative-time datetime="2017-02-15T18:43:07Z">Feb 15, 2017</relative-time></a>
+
+  </div>
+</div>
+
+
+  <div class="edit-comment-hide">
+    <table class="d-block">
+      <tbody class="d-block">
+        <tr class="d-block">
+          <td class="d-block comment-body markdown-body  js-comment-body">
+              <p>On a related note, would you be interested in using <a href="https://github.com/babel/babelify">babelify</a> to compile ES2015+ code down to ES5? This would allow a <a href="https://babeljs.io/learn-es2015/">variety of syntax upgrades</a> to the files in <code>src/</code>, while preserving correct behavior of <code>xregexp-all.js</code> in all ES5+ browsers.</p>
+<p>One way of doing this is to install <code>babelify</code> and <code>babel-preset-es2015</code> as <code>devDependencies</code>, then change the <code>build</code> script to</p>
+<div class="highlight highlight-source-shell"><pre>browserify src/index.js --standalone XRegExp --transform [ babelify --presets [ es2015 ] ] <span class="pl-k">&gt;</span> xregexp-all.js</pre></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+      
+
+<div class="comment-reactions  js-reactions-container "
+
+    >
+</div>
+
+  </div>
+
+</div>
+
+  </div>
+  <div class="timeline-comment-wrapper js-comment-container">
+    <a href="/slevithan"><img alt="@slevithan" class="timeline-comment-avatar" height="44" src="https://avatars3.githubusercontent.com/u/1466797?v=3&amp;s=88" width="44" /></a>
+    
+
+<div id="issuecomment-292869909"
+     class="comment previewable-edit timeline-comment js-comment js-task-list-container
+                     "
+     data-body-version="69aa3d8151e4c9c07376b3ef2945c731">
+
+  
+<div class="timeline-comment-header">
+  <div class="timeline-comment-actions">
+
+
+  </div>
+
+    
+    <span class="timeline-comment-label text-bold tooltipped tooltipped-multiline tooltipped-s" aria-label="This user is the owner of the xregexp repository.">
+      Owner
+    </span>
+
+
+
+  <div class="timeline-comment-header-text">
+
+    <strong>
+      <a href="/slevithan" class="author">slevithan</a> 
+    </strong>
+
+    commented
+
+    <a href="#issuecomment-292869909" class="timestamp"><relative-time datetime="2017-04-10T07:24:36Z">Apr 10, 2017</relative-time></a>
+
+      &#8226;
+      <span class="timestamp timestamp-edited tooltipped tooltipped-n"
+            aria-label="slevithan edited this comment about 14 hours ago">
+          edited
+      </span>
+  </div>
+</div>
+
+
+  <div class="edit-comment-hide">
+    <table class="d-block">
+      <tbody class="d-block">
+        <tr class="d-block">
+          <td class="d-block comment-body markdown-body  js-comment-body">
+              <p><a href="https://github.com/josephfrazier" class="user-mention">@josephfrazier</a> Yes I'd be happy happy to move to ES2015+ code and compile down to ES5, if you're willing to set it up. :D</p>
+<p>It would be nice to also have ES5 versions of all the individual modules, for people who don't want to use <code>xregexp-all.js</code>. I guess those could go in a new <code>dist</code> directory or similar, and <code>xregexp-all.js</code> should probably move in there as well.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+      
+
+<div class="comment-reactions  js-reactions-container "
+
+    >
+</div>
+
+  </div>
+
+</div>
+
+  </div>
+  <div class="timeline-comment-wrapper js-comment-container">
+    <a href="/josephfrazier"><img alt="@josephfrazier" class="timeline-comment-avatar" height="44" src="https://avatars0.githubusercontent.com/u/6473925?v=3&amp;s=88" width="44" /></a>
+    
+
+<div id="issuecomment-293076389"
+     class="comment previewable-edit timeline-comment js-comment js-task-list-container
+                     "
+     data-body-version="0fafda81c425f386cd1c984b9f897d7b">
+
+  
+<div class="timeline-comment-header">
+  <div class="timeline-comment-actions">
+
+
+  </div>
+
+    
+    <span class="timeline-comment-label tooltipped tooltipped-multiline tooltipped-s" aria-label="This user has previously committed to the xregexp repository.">
+      Contributor
+    </span>
+
+
+
+  <div class="timeline-comment-header-text">
+
+    <strong>
+      <a href="/josephfrazier" class="author">josephfrazier</a> 
+    </strong>
+
+    commented
+
+    <a href="#issuecomment-293076389" class="timestamp"><relative-time datetime="2017-04-10T20:56:21Z">Apr 10, 2017</relative-time></a>
+
+  </div>
+</div>
+
+
+  <div class="edit-comment-hide">
+    <table class="d-block">
+      <tbody class="d-block">
+        <tr class="d-block">
+          <td class="d-block comment-body markdown-body  js-comment-body">
+              <p>Great to hear, thanks! Given the current arrangement of <a href="https://github.com/slevithan/xregexp/milestones">milestones</a>, I assume these changes will have to wait until <a href="https://github.com/slevithan/xregexp/issues/45" class="issue-link js-issue-link" data-url="https://github.com/slevithan/xregexp/issues/45" data-id="8781841" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#45</a> is resolved and v3.2.0 is released? Since the compiled <code>xregexp-all.js</code> is currently stored in the repo, making a pull request for Babel now means that it would cause a merge conflict with any other changes that need to happen first.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+      
+
+<div class="comment-reactions  js-reactions-container "
+
+    >
+</div>
+
+  </div>
+
+</div>
+
+  </div>
+
+
+
+
+
+<!-- Rendered timeline since 2017-04-10 13:56:21 -->
+<div id="partial-timeline-marker"
+      class="js-timeline-marker js-socket-channel js-updatable-content"
+      data-channel="issue:108510317"
+      data-url="/slevithan/xregexp/issues/108/show_partial?partial=issues%2Ftimeline_marker&amp;since=1491857781"
+      data-last-modified="Mon, 10 Apr 2017 20:56:21 GMT">
+
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/slevithan/xregexp/notifications/mark?ids=101822793" class="d-none js-timeline-marker-form" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="kMg7tUo/Lp1P9JHFcvEqxAbL/9e40oJJ/JLmZvzzUKfjT/vnzpqYW1LOHVESNc1jIyoJStHJ8K+ZD7wKWmrDrQ==" /></div>
+</form></div>
+
+
+        </div>
+
+          <div class="discussion-timeline-actions">
+                <div class="flash flash-warn mt-3">
+    <a href="/join?source=comment-repo" class="btn btn-primary" rel="nofollow">Sign up for free</a>
+    <strong>to join this conversation on GitHub</strong>.
+    Already have an account?
+    <a href="/login?return_to=https%3A%2F%2Fgithub.com%2Fslevithan%2Fxregexp%2Fissues%2F108" rel="nofollow">Sign in to comment</a>
+</div>
+
+
+          </div>
+      </div>
+
+    </div>
+    <div class="clear"></div>
+  </div>
+
+</div>
+
+
+  </div>
+  <div class="modal-backdrop js-touch-events"></div>
+</div>
+
+    </div>
+  </div>
+
+  </div>
+
+      <div class="container site-footer-container">
+  <div class="site-footer" role="contentinfo">
+    <ul class="site-footer-links float-right">
+        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact GitHub</a></li>
+      <li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+
+    </ul>
+
+    <a href="https://github.com" aria-label="Homepage" class="site-footer-mark" title="GitHub">
+      <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+    <ul class="site-footer-links">
+      <li>&copy; 2017 <span title="0.34674s from github-fe152-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+        <li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+  
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
+    <button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+    </button>
+    You can't perform that action at this time.
+  </div>
+
+
+    <script crossorigin="anonymous" integrity="sha256-ikMY/+oJoM24IUt2zykmufagztMYoxe+1BnbGSFMaQ0=" src="https://assets-cdn.github.com/assets/compat-8a4318ffea09a0cdb8214b76cf2926b9f6a0ced318a317bed419db19214c690d.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-bRCeda2EcbpBUIJybADDX7kpzquXUIJJKDXxHsqMB9k=" src="https://assets-cdn.github.com/assets/frameworks-6d109e75ad8471ba415082726c00c35fb929ceab975082492835f11eca8c07d9.js"></script>
+    <script async="async" crossorigin="anonymous" integrity="sha256-wC5XS/AFJkeL8nkWRggFsWsLsKi9cy0rFOeeMdWkUig=" src="https://assets-cdn.github.com/assets/github-c02e574bf00526478bf27916460805b16b0bb0a8bd732d2b14e79e31d5a45228.js"></script>
+    
+    
+    
+    
+  <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
+    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
+    <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+  </div>
+  <div class="facebox" id="facebox" style="display:none;">
+  <div class="facebox-popup">
+    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+    </div>
+    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+    </button>
+  </div>
+</div>
+
+
+  </body>
+</html>
+

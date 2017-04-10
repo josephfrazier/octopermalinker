@@ -9,6 +9,15 @@ import permalink from '../lib/permalinker'
 require('dotenv-safe').config()
 
 checkLink({
+  name: 'milestones url',
+  pageUrl: 'https://github.com/slevithan/xregexp/issues/108#issuecomment-293076389',
+  archiveUrl: 'https://web.archive.org/web/20170410213100id_/https://github.com/slevithan/xregexp/issues/108#issuecomment-293076389',
+  linkHref: 'https://github.com/slevithan/xregexp/milestones',
+  permalinkHref: 'https://github.com/slevithan/xregexp/milestones/tree/a5e5f43a65c17547cb7be7c2859d1022f2bcbc7f',
+  shouldPermalink: false
+})
+
+checkLink({
   name: 'search links',
   pageUrl: 'https://github.com/moll/vim-node/issues/24#issuecomment-132334681',
   archiveUrl: 'https://web.archive.org/web/20170322175057id_/https://github.com/moll/vim-node/issues/24#issuecomment-132334681',
