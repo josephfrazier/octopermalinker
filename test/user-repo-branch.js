@@ -31,3 +31,10 @@ test('https://github.com/mozilla/web-ext/issues?utf8=%E2%9C%93&q=is%3Aclosed%20l
     repo: 'web-ext'
   })
 })
+
+test('https://github.com/x0rz/EQGRP/edit/master/README.md', (t) => {
+  t.deepEqual(userRepoBranch('https://github.com/x0rz/EQGRP/edit/master/README.md'), {
+    user: 'x0rz',
+    repo: 'EQGRP'
+  })
+})
