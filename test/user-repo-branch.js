@@ -17,3 +17,10 @@ test('https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef
     repo: 'pageres'
   })
 })
+
+test('https://github.com/mozilla/web-ext/issues?utf8=%E2%9C%93&q=is%3Aclosed%20label%3A%22needs%3A%20docs%22%20', (t) => {
+  t.deepEqual(userRepoBranch('https://github.com/mozilla/web-ext/issues?utf8=%E2%9C%93&q=is%3Aclosed%20label%3A%22needs%3A%20docs%22%20'), {
+    user: 'mozilla',
+    repo: 'web-ext'
+  })
+})
