@@ -6,5 +6,5 @@ TODO
 * permalink urls in code blobs: https://github.com/MatAtBread/fast-async/blob/fbd2c4db54813b5130f49a46f6280bcad17c7f53/plugin.js#L35
   * see if github provides blame api to figure out when it was committed
 * Use e.g. `git log -S` to guess when links were added.
-  * For example, the `more...` permalink here is broken: https://github.com/nice-registry/nice-package#nice-package---
+  * For example, the `more...` permalink here is broken: https://github.com/nice-registry/nice-package/tree/5388835b5412c2e5f448fbd5043117f07d87a210#nice-package---
 * Figure out what's going on with 96bd92ba935682d06693c47775b93dec32d019c2
