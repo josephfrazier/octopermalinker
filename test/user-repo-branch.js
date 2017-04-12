@@ -38,3 +38,10 @@ test('https://github.com/x0rz/EQGRP/edit/master/README.md', (t) => {
     repo: 'EQGRP'
   })
 })
+
+test('https://github.com/gorhill/uBlock/graphs/contributors', (t) => {
+  t.deepEqual(userRepoBranch('https://github.com/gorhill/uBlock/graphs/contributors'), {
+    user: 'gorhill',
+    repo: 'uBlock'
+  })
+})
