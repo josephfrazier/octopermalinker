@@ -2,7 +2,6 @@ TODO
 ====
 
 * permalink raw.githubusercontent.com links: https://web.archive.org/web/20170329173434id_/https://github.com/github/markup/issues/1022#issue-215368549
-* don't relink on forward/back (click on a file, then go back): https://github.com/gorhill/uBlock
 * permalink urls in code blobs: https://github.com/MatAtBread/fast-async/blob/fbd2c4db54813b5130f49a46f6280bcad17c7f53/plugin.js#L35
   * see if github provides blame api to figure out when it was committed
 * Use e.g. `git log -S` to guess when links were added.
