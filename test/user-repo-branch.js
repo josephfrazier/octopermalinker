@@ -2,6 +2,15 @@
 import test from 'ava'
 import userRepoBranch from '../lib/user-repo-branch'
 
+test('https://github.com/prettier/prettier/', (t) => {
+  t.deepEqual(userRepoBranch('https://github.com/prettier/prettier/'), {
+    user: 'prettier',
+    repo: 'prettier',
+    branch: 'master',
+    href: 'https://github.com/prettier/prettier/tree/master'
+  })
+})
+
 test('https://github.com/akhodakivskiy/VimFx', (t) => {
   t.deepEqual(userRepoBranch('https://github.com/akhodakivskiy/VimFx'), {
     user: 'akhodakivskiy',

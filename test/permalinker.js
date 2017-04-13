@@ -9,6 +9,14 @@ import permalink from '../lib/permalinker'
 require('dotenv-safe').config()
 
 checkLink({
+  name: 'eslump readme',
+  pageUrl: 'https://github.com/lydell/eslump#examples',
+  archiveUrl: 'https://web.archive.org/web/20170413182903id_/https://github.com/lydell/eslump#examples',
+  linkHref: 'https://github.com/prettier/prettier/',
+  permalinkHref: 'https://github.com/prettier/prettier/tree/7702a2b1e30118471b00f7ba4ca4f47450c54ebb'
+})
+
+checkLink({
   name: 'milestones url',
   pageUrl: 'https://github.com/slevithan/xregexp/issues/108#issuecomment-293076389',
   archiveUrl: 'https://web.archive.org/web/20170410213100id_/https://github.com/slevithan/xregexp/issues/108#issuecomment-293076389',
