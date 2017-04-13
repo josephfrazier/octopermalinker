@@ -1,6 +1,7 @@
 TODO
 ====
 
+* Permalink urls in Hacker News comments: https://news.ycombinator.com/item?id=14110168
 * handle wiki links - "wide-spectrum blocker" at https://github.com/gorhill/uBlock/tree/f4f52c32209348dc050b77b6e0d84b9be5897541#beware-ublock-origin-is-completely-unrelated-to-the-web-site-ublockorg
 * permalink raw.githubusercontent.com links: https://web.archive.org/web/20170329173434id_/https://github.com/github/markup/issues/1022#issue-215368549
 * permalink urls in code blobs: https://github.com/MatAtBread/fast-async/blob/fbd2c4db54813b5130f49a46f6280bcad17c7f53/plugin.js#L35
