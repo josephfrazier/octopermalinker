@@ -1324,10 +1324,6 @@ chrome-location@^1.2.0:
     userhome "^1.0.0"
     which "^1.0.5"
 
-chrome-promise@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/chrome-promise/-/chrome-promise-2.0.2.tgz#7d16f8766bbc39ed0388c1010b4e3b1a5009e1fc"
-
 chrome-webstore-upload-cli@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/chrome-webstore-upload-cli/-/chrome-webstore-upload-cli-1.1.1.tgz#3f8a3211c4d6f474ba3ca597e2bcb9aab227d44b"
@@ -5692,6 +5688,10 @@ web-ext@^1.8.1:
     watchpack "1.2.0"
     yargs "6.6.0"
     zip-dir "1.0.2"
+
+webextension-polyfill@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/webextension-polyfill/-/webextension-polyfill-0.1.1.tgz#1d172e59b9ee8706d5ce2c55eebfe0cf23972d70"
 
 webidl-conversions@^3.0.0:
   version "3.0.1"
