@@ -2,6 +2,13 @@
 import test from 'ava'
 import userRepoBranch from '../lib/user-repo-branch'
 
+test('https://github.com/OctoLinker/browser-extension/compare/v4.10.0...v4.11.0', (t) => {
+  t.deepEqual(userRepoBranch('https://github.com/OctoLinker/browser-extension/compare/v4.10.0...v4.11.0'), {
+    user: 'OctoLinker',
+    repo: 'browser-extension'
+  })
+})
+
 test('https://github.com/prettier/prettier/pulls?q=is%3Apr+is%3Aclosed', (t) => {
   t.deepEqual(userRepoBranch('https://github.com/prettier/prettier/pulls?q=is%3Apr+is%3Aclosed'), {
     user: 'prettier',
