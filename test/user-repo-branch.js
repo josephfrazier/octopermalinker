@@ -2,6 +2,13 @@
 import test from 'ava'
 import userRepoBranch from '../lib/user-repo-branch'
 
+test('https://github.com/prettier/prettier/pulls?q=is%3Apr+is%3Aclosed', (t) => {
+  t.deepEqual(userRepoBranch('https://github.com/prettier/prettier/pulls?q=is%3Apr+is%3Aclosed'), {
+    user: 'prettier',
+    repo: 'prettier'
+  })
+})
+
 test('https://github.com/prettier/prettier/', (t) => {
   t.deepEqual(userRepoBranch('https://github.com/prettier/prettier/'), {
     user: 'prettier',
