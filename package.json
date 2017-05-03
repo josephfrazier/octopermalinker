@@ -58,7 +58,7 @@
   "devDependencies": {
     "ava": "^0.19.0",
     "babel-core": "^6.23.1",
-    "babel-loader": "^6.3.2",
+    "babel-loader": "^7.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.2.1",
@@ -67,7 +67,7 @@
     "chrome-webstore-upload-cli": "^1.1.1",
     "copy-webpack-plugin": "^4.0.1",
     "dotenv-safe": "^4.0.3",
-    "fs-extra": "^2.1.2",
+    "fs-extra": "^3.0.0",
     "got": "^6.7.1",
     "jsdom": "^9.11.0",
     "json": "^9.0.6",
