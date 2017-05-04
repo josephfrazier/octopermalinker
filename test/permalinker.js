@@ -3,7 +3,7 @@ import test from 'ava'
 import fse from 'fs-extra'
 import pify from 'pify'
 import got from 'got'
-import jsdom from 'jsdom'
+import jsdom from 'jsdom/lib/old-api.js'
 import permalink from '../lib/permalinker'
 
 require('dotenv-safe').config()
