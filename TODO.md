@@ -1,6 +1,8 @@
 TODO
 ====
 
+* Fix link at https://github.com/prettier/prettier/issues/1520#issuecomment-300021554
+  * href is https://github.com/prettier/prettier/blob/master/src/printer.js#L897
 * Fix link at https://github.com/slevithan/xregexp/issues/115#issuecomment-151471311
   * href is https://github.com/slevithan/xregexp/blob/master/xregexp-all.js#L18
 * Permalink urls in Hacker News comments: https://news.ycombinator.com/item?id=14110168
