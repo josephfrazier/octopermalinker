@@ -12,7 +12,14 @@ OctoPermalinker is a browser extension that searches GitHub comments/files for l
 
 # Install
 
-See the Quick Start section of [the Contributing guide](./CONTRIBUTING.md).
+OctoPermalinker is available from the [Chrome Web Store].
+If you use Firefox, install [Chrome Store Foxified] first.
+
+Alternatively, you can build and install OctoPermalinker locally by following the [Quick Start] section of the Contributing guide.
+
+[Chrome Web Store]: https://chrome.google.com/webstore/detail/octopermalinker/bcnkgcoohaaaclieohdlkphgfinkgbfm
+[Chrome Store Foxified]: https://addons.mozilla.org/en-US/firefox/addon/chrome-store-foxified/
+[Quick Start]: ./CONTRIBUTING.md#quick-start
 
 # Features
 
