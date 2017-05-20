@@ -13,13 +13,6 @@ before_script:
 script:
 - travis_retry npm test
 deploy:
-- provider: releases
-  api_key: "$GH_DEPLOY"
-  file_glob: true
-  file: out/*.zip
-  skip_cleanup: true
-  on:
-    tags: true
 - provider: script
   script: npm run release
   skip_cleanup: true
