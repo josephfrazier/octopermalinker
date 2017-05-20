@@ -3,7 +3,7 @@ import test from 'ava'
 import fse from 'fs-extra'
 import pify from 'pify'
 import got from 'got'
-import jsdom from 'jsdom/lib/old-api.js'
+import { JSDOM } from 'jsdom'
 import permalink from '../lib/permalinker'
 
 require('dotenv-safe').config()
@@ -123,7 +123,7 @@ function checkLink ({ name, pageUrl, archiveUrl, linkHref, permalinkHref, should
       const { body } = await got(archiveUrl)
       await pify(fse.outputFile)(fixturePath, body)
     }
-    const { document } = await pify(jsdom.env)(fixturePath)
+    const { window: { document } } = new JSDOM(await fse.readFile(fixturePath, { encoding: 'utf8' }))
     await permalink({ token: process.env.GITHUB_TOKEN }, document)
     const fragileLink = document.querySelector(`[href="${linkHref}"]`)
     if (shouldPermalink && permalinkHref !== linkHref) {
