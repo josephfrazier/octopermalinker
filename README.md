@@ -2,6 +2,14 @@
 
 OctoPermalinker is a browser extension that searches GitHub comments/files for links to files on branches, and adds a link to where the branch pointed when the comment/file was made/updated. This helps you avoid following a link that was broken after being posted. For context, here's some discussion about broken GitHub links: [Don't link to line numbers in GitHub](https://news.ycombinator.com/item?id=8046710).
 
+# Demo
+
+## Before
+![Imgur](http://i.imgur.com/0x7mF6h.gif)
+
+## After
+![Imgur](http://i.imgur.com/NmyKDRk.gif)
+
 # Install
 
 See the Quick Start section of [the Contributing guide](./CONTRIBUTING.md).
