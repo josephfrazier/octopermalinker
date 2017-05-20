@@ -1,29 +1,30 @@
 sudo: false
 language: node_js
 node_js:
-  - 7
+- 7
 cache:
   yarn: true
   directories:
-    - node_modules
+  - node_modules
 before_script:
-  - if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then yarn upgrade && git diff --exit-code; fi
-  - npm run package-all
+- if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then yarn upgrade && git diff --exit-code;
+  fi
+- npm run package-all
 script:
-  - travis_retry npm test
+- travis_retry npm test
 deploy:
-  - provider: releases
-    api_key: "$GH_DEPLOY"
-    file_glob: true
-    file: "out/*.zip"
-    skip_cleanup: true
-    on:
-      tags: true
-  - provider: script
-    script: npm run release
-    on:
-      branch: master
-      tags: true
+- provider: releases
+  api_key: "$GH_DEPLOY"
+  file_glob: true
+  file: out/*.zip
+  skip_cleanup: true
+  on:
+    tags: true
+- provider: script
+  script: npm run release
+  on:
+    branch: master
+    tags: true
 env:
   global:
     secure: WMMEr2jhFsS8e/LFcJp5CfZEWuV4hDPHS844PzfZSmr6OL/k1C/zoUH2TQC8fB1imj9wtQd4uKekuOmn6pIXAqKGYHUcKfqqEh+DxuhvjC/IHtLXANlsHReDHDuPE9CkdtRPOQgU3D97NmFZzgb1whDDA1zZxVS8wTON9b/7IWcXXh9L2WU/m5pJzafI6PVkBWzWqOpnmOrYulP26PvtBgcc2HoqDMM3C4Jk9jkbJADhlBUHCrhCb3zDC6YJNYRps0XHkH2k1lkVjz8hiv4pL6fk8zIMUIaKL6MmYXGaNwaEDHvDD6wRqpCgUdqSUFqwoe3UlxehpWP3UtJN8Chd/79c357GboiQ6X/c21sKLhYHaHKlp5nd1MuoRdW3p9GaOfQvnaR2p1Te+6+n9qEn4wzpmmd4shsf034T0Do4KVbotknzDvj1xHkxSmEQD0gBwEjc5t7H8hpVgJ7K9E1qjP0PgVd9U07ZRxHC8q5641dEUJPqtHLD2Uky2hzx4Ox7ZdiN/CYEZzwdHaI4efBiyqCQulvtmxHn+t/TBn4Ki9MmCfT9NgJ0fcfSooFmYxNmA6X/MyzwLMNIaHwCbZsM1ZGJeB2Bcv3RM/VJIMuE0yRGuQcnPhFAcz9r+msEnjEn/qXcy9efDNzQAB8ywna/FZGcjRTn4w2r9hAxl9HRm30=
