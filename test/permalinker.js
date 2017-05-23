@@ -123,7 +123,7 @@ function checkLink ({ name, pageUrl, archiveUrl, linkHref, permalinkHref, should
       const { body } = await got(archiveUrl)
       await pify(fse.outputFile)(fixturePath, body)
     }
-    const { window: { document } } = new JSDOM(await fse.readFile(fixturePath, { encoding: 'utf8' }))
+    const { window: { document } } = await JSDOM.fromFile(fixturePath)
     await permalink({ token: process.env.GITHUB_TOKEN }, document)
     const fragileLink = document.querySelector(`[href="${linkHref}"]`)
     if (shouldPermalink && permalinkHref !== linkHref) {
