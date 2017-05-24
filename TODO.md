@@ -1,6 +1,7 @@
 TODO
 ====
 
+* Don't paste-protect urls to a repo's homepage. They're likely intentional
 * Permalink urls in Hacker News comments: https://news.ycombinator.com/item?id=14110168
   * https://news.ycombinator.com/item?id=13917368
 * handle wiki links - "wide-spectrum blocker" at https://github.com/gorhill/uBlock/tree/f4f52c32209348dc050b77b6e0d84b9be5897541#beware-ublock-origin-is-completely-unrelated-to-the-web-site-ublockorg
