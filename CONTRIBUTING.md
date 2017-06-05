@@ -10,7 +10,8 @@ First off, thanks for taking the time to contribute! :tada: :+1:
 To build and run the extension follow these steps.
 
 1. Clone the repository.
-1. Run `npm install` to setup the project and install all required dependencies.
+1. Make sure [Yarn](https://yarnpkg.com/docs/install) is installed.
+1. Run `yarn install` to setup the project and install all required dependencies.
 1. Build and load the extension:
    * Firefox (Quickstart):
      1. `npm run firefox-open`
