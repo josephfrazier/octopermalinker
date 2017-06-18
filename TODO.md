@@ -1,6 +1,8 @@
 TODO
 ====
 
+* Fix link at https://github.com/prettier/prettier/pull/2190#discussion_r122602431
+  * href is https://github.com/tdeekens/prettier/blob/fix/css-modules-composes/src/doc-utils.js#L161
 * Permalink urls in Hacker News comments: https://news.ycombinator.com/item?id=14110168
   * https://news.ycombinator.com/item?id=13917368
 * handle wiki links - "wide-spectrum blocker" at https://github.com/gorhill/uBlock/tree/f4f52c32209348dc050b77b6e0d84b9be5897541#beware-ublock-origin-is-completely-unrelated-to-the-web-site-ublockorg
