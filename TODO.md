@@ -1,6 +1,8 @@
 TODO
 ====
 
+* Fix link at https://github.com/greenkeeperio/greenkeeper/issues/314#issuecomment-255737405
+  * href is https://github.com/greenkeeperio/greenkeeper/blob/master/src/evilhackerdude.js
 * Fix link at https://github.com/prettier/prettier/pull/2190#discussion_r122602431
   * href is https://github.com/tdeekens/prettier/blob/fix/css-modules-composes/src/doc-utils.js#L161
 * Permalink urls in Hacker News comments: https://news.ycombinator.com/item?id=14110168
