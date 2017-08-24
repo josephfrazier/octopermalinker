@@ -1,6 +1,7 @@
 TODO
 ====
 
+* Permalink urls in Reddit comments: https://www.reddit.com/r/reactjs/comments/4y43uc/react_router_how_to_deal_with_search_queries/d6l7q2f/
 * Fix link at https://github.com/greenkeeperio/greenkeeper/issues/314#issuecomment-255737405
   * href is https://github.com/greenkeeperio/greenkeeper/blob/master/src/evilhackerdude.js
 * Fix link at https://github.com/prettier/prettier/pull/2190#discussion_r122602431
