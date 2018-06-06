@@ -3,6 +3,9 @@ TODO
 
 * Add PR link after commit links/references
 * Handle `/blame/` links
+* Handle `/commits/` links
+  * Example: https://github.com/localForage/localForage/pull/555#issuecomment-392352127
+  * href is https://github.com/localForage/localForage/commits/v2.0-dev?after=40c70210a54645c33919a283b2a1138f40b7a001+69
 * Permalink urls in Reddit comments: https://www.reddit.com/r/reactjs/comments/4y43uc/react_router_how_to_deal_with_search_queries/d6l7q2f/
 * Fix link at https://github.com/greenkeeperio/greenkeeper/issues/314#issuecomment-255737405
   * href is https://github.com/greenkeeperio/greenkeeper/blob/master/src/evilhackerdude.js
